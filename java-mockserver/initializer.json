@@ -1,0 +1,12 @@
+[
+  {
+    "httpRequest": {
+      "path": "/maps/api/place/textsearch/json"
+    },
+    "httpResponse": {
+      "body": {
+          "city": "Kyiv"
+        }
+      }
+  }
+]

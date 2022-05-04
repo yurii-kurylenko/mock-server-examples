@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+  camouflage:
+    image: shubhendumadhukar/camouflage:latest
+    volumes:
+      - ./camouflage:/app
+    ports:
+      - "8006:8080"
+
+  java-mock-server:
+    image: mockserver/mockserver
+    volumes:
+      - ./java-mockserver:/app
+    ports:
+      - "8007:1080"
+    environment:
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /app/initializer.json
+
+  smocker:
+    image: thiht/smocker
+    ports:
+      - 8080:8080
+      - 8081:8081
